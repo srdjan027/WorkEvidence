@@ -60,7 +60,7 @@ def write_checkout_time():
     c_sec = time.localtime(time.time()).tm_sec
     table[c_mday][3] = '{:02d}:{:02d}:{:02d}'.format(c_hour,c_min,c_sec)
 
-    #write total time at work
+    #write total time at work for current date
     ck_in = table[c_mday][2].split(':')
     work_time = (c_hour - int(ck_in[0]))*3600 + (c_min - int(ck_in[1]))*60 + c_sec - int(ck_in[2]) - int(table[c_mday][4])*60
     w_hour = work_time // 3600
