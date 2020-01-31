@@ -7,6 +7,8 @@ import csv
 c_wday = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 head_line = 'Day\tDate\tCheck In\tCheck Out\tExtra pause [min.]\tHours\tNote\n'
 
+# create an empty table for the curent month
+# in the case table alredy exists it will be overwritten !!!
 def make_empty_table(c_month = time.localtime(time.time()).tm_mon):
     c_year = time.localtime(time.time()) .tm_year
     days_in_month = monthrange(c_year, c_month)[1]
