@@ -87,6 +87,22 @@ def write_table(table, table_name):
         for row in table:
             spamwriter.writerow(row)
 
+def calculate_statistics():
+    table, table_name = read_work_table()
+    h_sum = 0
+    m_sum = 0
+    s_sum = 0
+    i = 1
+    for dummy in table:
+        #tmp = row[0:]
+        try:
+            print(table[i][5])
+        except:
+            pass
+        i += 1
+
+
+
 
 try:
     # check in time alredy writed
@@ -102,7 +118,7 @@ except Exception as e:
         print('File for current month is not created, it will be created now.\n ')
         operation = 0
 
-
+operation = 4
 
 if operation == 0:
     make_empty_table()
@@ -114,3 +130,5 @@ elif operation == 2:
 elif operation == 3:
     write_pause()
     write_checkout_time()
+elif operation == 4:
+    calculate_statistics()
